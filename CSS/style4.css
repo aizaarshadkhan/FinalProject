@@ -1,0 +1,444 @@
+/* default reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --primary-dark: #0a192f;
+  --primary-blue: #1f3a5f;
+  --accent-green: #2e7d32;
+  --accent-green-light: #e8f5e9;
+  --bg-light: #f8f9fa;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --white: #ffffff;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+
+  /* flexible font sizes */
+  --fs-hero-title: clamp(2rem, 1.2rem + 4vw, 3.5rem);
+  --fs-title: clamp(1.5rem, 1.15rem + 1.75vw, 2.5rem);
+  --fs-heading-md: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+  --fs-hero-body: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+}
+
+.sections {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.sections h2 {
+  font-size: var(--fs-title);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container div {
+  font-size: var(--fs-hero-body);
+}
+
+.hero-section {
+  margin: 4rem auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.hero-section>div:first-child {
+  max-width: 280px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.hero-section h1 {
+  /* border-radius: var(--border-radius); */
+  font-size: var(--fs-hero-title);
+}
+
+.hero-section h1 span {
+  color: var(--accent-green);
+}
+
+.hero-section img {
+  width: 100%;
+  height: 100%;
+}
+
+.accent-bar {
+  width: clamp(40px, 35px, 25px);
+  height: 4px;
+  background-color: var(--accent-green);
+  border-radius: 2px;
+}
+
+.hero-section p {
+  /* color: var(--accent-green); */
+  font-size: var(--fs-hero-body);
+  line-height: 1.6;
+  /* max-width: 400px; */
+}
+
+.donation-type-cards {
+  text-align: center;
+}
+
+.sections .container a img {
+  width: 35%;
+}
+
+#donation-pictures {
+  margin: 2rem auto;
+  padding: calc(0.25rem * 16) calc(0.25rem * 8);
+  background-color: var(--accent-green-light);
+}
+
+#donation-pictures .sub-container p:first-of-type {
+  font-size: var(--fs-heading-md);
+  color: var(--accent-green);
+}
+
+#donation-pictures .sub-container h2 {
+  text-align: left;
+  color: var(--primary-blue);
+  margin: 0.5rem auto;
+}
+
+#donation-pictures .sub-container p:last-of-type {
+  font-size: var(--fs-hero-body);
+  color: #7a7d85;
+}
+
+/* --- Gallery Layout --- */
+#masonry-gall-container {
+  column-count: 4;
+  /* Number of columns on desktop */
+  column-gap: 15px;
+  /* Space between columns */
+  padding: 20px 0;
+  font-family: sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.masonry-item {
+  display: inline-block;
+  /* Crucial: Prevents items from breaking across columns */
+  width: 100%;
+  /* Forces item to stretch to column width */
+  margin-bottom: 15px;
+  /* Vertical space between items */
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.masonry-item:hover {
+  transform: translateY(-3px);
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  /* Crucial: Keeps original aspect ratio for masonry effect */
+  display: block;
+}
+
+.caption {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background: #fafafa;
+  color: #333;
+}
+
+/* --- Custom Modal Overlay --- */
+.custom-modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show class for JS manipulation */
+.custom-modal.is-active {
+  display: flex;
+}
+
+/* --- Modal Close Button --- */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* --- Carousel Slide Container --- */
+.carousel-wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-item {
+  display: none;
+  /* Hide all slides by default */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 0.4s ease;
+}
+
+.slide-item.active-slide {
+  display: flex;
+  /* Show active slide */
+}
+
+.slide-item img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.slide-details {
+  margin-top: 15px;
+  font-family: sans-serif;
+}
+
+.slide-details h3 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.slide-details p {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* --- Navigation Buttons --- */
+.crsl-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.crsl-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.prev-btn {
+  left: -60px;
+}
+
+.next-btn {
+  right: -60px;
+}
+
+#slides-rotate-container {
+  display: none;
+}
+
+.dot-icon {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Hover  */
+.dot-icon:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Highlight style when class is added via showSlide() function */
+.dot-icon.active-dot {
+  background-color: #ffffff;
+  transform: scale(1.2);
+  /* Makes the active ball slightly larger */
+}
+
+/*---------------------------------- FAQ Section Styling--------------------------------- */
+#our-faq {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+#our-faq h2 {
+  font-size: var(--fs-title);
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+#our-faq>p {
+  font-size: var(--fs-hero-body);
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* jQuery UI Accordion Custom Theme Overriding */
+#faq-accordion {
+  border: none;
+  background: transparent;
+}
+
+/* Accordion Headers */
+#faq-accordion .ui-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  color: var(--text-main);
+  border: 1px solid #e5e7eb;
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Hover & Focus States */
+#faq-accordion .ui-accordion-header:hover {
+  background: var(--bg-light);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+/* Active / Open Header State */
+#faq-accordion .ui-accordion-header-active {
+  background: var(--accent-green-light);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+/* Hide Default jQuery UI Arrow Icons */
+#faq-accordion .ui-accordion-header .ui-icon {
+  display: none;
+}
+
+/* Custom CSS Arrow Indicator */
+#faq-accordion .ui-accordion-header::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-muted);
+  border-bottom: 2px solid var(--text-muted);
+  transform: rotate(45deg);
+  transition: var(--transition);
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+/* Rotate Arrow when Active */
+#faq-accordion .ui-accordion-header-active::after {
+  border-color: var(--accent-green);
+  transform: rotate(-135deg);
+}
+
+/* Accordion Content Panel */
+#faq-accordion .ui-accordion-content {
+  background: var(--white);
+  color: var(--text-main);
+  border: 1px solid var(--accent-green);
+  border-top: none;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow: auto;
+}
+
+/* Removes margin for p content */
+#faq-accordion .ui-accordion-content p {
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

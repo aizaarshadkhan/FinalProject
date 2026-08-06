@@ -1,0 +1,91 @@
+/* Responsive adjustments for smaller screens */
+
+@media (max-width: 1200px) {
+  header {
+    border: none;
+  }
+  .hero-section {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 900px) {
+  #masonry-gall-container {
+    column-count: 3;
+  }
+  .hero-section > div:first-child {
+    max-width: 75%;
+  }
+}
+/* When the screen width is 768px or smaller (Mobile/Tablets) */
+@media (max-width: 768px) {
+  /*Hides Next/Prev navigation arrows */
+  .crsl-nav-btn {
+    display: none !important;
+  }
+
+  /* Force the dot row container to show up */
+  #slides-rotate-container {
+    display: flex !important;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .custom-modal.is-active {
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  /* adjust close btn */
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    font-size: 28px; /* Slightly smaller */
+    z-index: 1010;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+  }
+
+  .carousel-wrapper {
+    flex-direction: column;
+    width: 100%; /* full width of the mobile screen */
+    max-width: 100%;
+    margin-top: 40px; /* Pushes content down so it never hits the close button */
+  }
+
+  .slide-item img {
+    max-height: 50vh; /* Limits image for leaving room for text */
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* typography resizing */
+  .slide-details h3 {
+    font-size: 16px;
+  }
+  .slide-details p {
+    font-size: 12px;
+    padding: 0 10px; /* Prevents text from touching left/right phone bezels */
+  }
+}
+
+@media (max-width: 600px) {
+  #masonry-gall-container {
+    column-count: 2;
+  }
+
+  #donation-pictures {
+    padding: calc(0.25rem * 8) calc(0.25rem * 4);
+  }
+}
+@media (max-width: 400px) {
+  #masonry-gall-container {
+    column-count: 1;
+  }
+}
