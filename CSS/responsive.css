@@ -435,7 +435,7 @@
 
     /* login page start */
     .login {
-        background-image: url(/IMG/login-bg.png);
+        background-image: url(../IMG/login-bg.png);
         background-repeat: no-repeat;
         background-size: 100% 130%;
         background-attachment: fixed;

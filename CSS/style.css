@@ -120,7 +120,7 @@ nav a:hover {
 
 /* Login Page */
 .login {
-    background-image: url(/IMG/login-img-left.png), url(/IMG/login-img-right.PNG);
+    background-image: url(../IMG/login-img-left.png), url(../IMG/login-img-right.PNG);
     background-repeat: no-repeat, no-repeat;
     background-position: left top, right bottom;
     background-attachment: fixed;
@@ -379,7 +379,7 @@ small {
 
 /* index page*/
 .hero-container {
-    background-image: url(/IMG/register-page-bg-left.png), url(/IMG/register-page-bg-right.png);
+    background-image: url(../IMG/register-page-bg-left.png), url(../IMG/register-page-bg-right.png);
     background-attachment: fixed;
     background-repeat: no-repeat, no-repeat;
     background-size: 45% 100%, 70% 95%;
@@ -560,7 +560,7 @@ small {
 .bottom-banner-container {
     width: 90%;
     margin: 90px auto;
-    background-image: url(/IMG/home-page-footer-banner.png);
+    background-image: url(../IMG/home-page-footer-banner.png);
     background-repeat: no-repeat;
     background-size: 100% 250% ;
     background-position: center center;

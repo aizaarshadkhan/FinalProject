@@ -33,7 +33,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: url(/IMG/contact-bg.jpg);
+    background: url(../IMG/contact-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

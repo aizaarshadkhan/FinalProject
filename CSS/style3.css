@@ -240,7 +240,7 @@ nav a:hover {
 }
 
 .stat1 {
-    background-image: url(/IMG/stat1.jpg);
+    background-image: url(../IMG/stat1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -248,21 +248,21 @@ nav a:hover {
 }
 
 .stat2 {
-    background-image: url(/IMG/stat2.jpg);
+    background-image: url(../IMG/stat2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
 }
 
 .stat3 {
-    background-image: url(/IMG/stat3.jpg);
+    background-image: url(../IMG/stat3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
 }
 
 .stat4 {
-    background-image: url(/IMG/stat4.jpg);
+    background-image: url(../IMG/stat4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
