@@ -16,7 +16,6 @@
 </head>
 
 <body class="login">
-    <div class="login-success"></div>
     <div class="container">
         <div class="left">
             <!-- logo -->
@@ -26,7 +25,7 @@
                 <p class="tagline">Share Food. Share Hope.</p>
 
                 <div class="line"></div>
-                
+
                 <h2 class="left-h2">Together, We Can End Food Waste.</h2>
 
                 <p class="description">
@@ -53,8 +52,11 @@
 
                     <div class="group password">
                         <label for="password" id="password-label">Password</label><br>
-                        <input type="text" name="password" id="password" placeholder="Enter Your Password"><br><br>
+                        <input type="password" name="password" id="password" placeholder="Enter Your Password"><br><br>
                         <small id="passwordError" class="error"></small>
+                        <div class="login-message"></div>
+
+                        <small id="loginError" class="text-danger d-none"></small>
                     </div>
 
                     <div class="login-actions">
@@ -62,7 +64,10 @@
                             <input type="checkbox" name="remember-me" id="remember-me">
                             <label for="remember-me">Remember me</label>
                         </div>
-                        <a href="#">Forget Password?</a>
+
+                        <a href="forgot-password.html" class="forgot-password">
+                            Forgot Password?
+                        </a>
                     </div>
 
                     <br><br>
@@ -72,9 +77,17 @@
                 <hr><br>
 
                 <div class="icon">
-                    <button><i class="fa-brands fa-google" style="color: rgb(66, 133, 244);"></i></button>
-                    <button><i class="fa-brands fa-apple" style="color: rgb(29, 29, 31);"></i></button>
-                    <button><i class="fa-brands fa-facebook-f" style="color: rgb(24, 119, 242);"></i></button>
+                    <button type="button" class="social-login-btn" id="googleLoginBtn">
+                        <i class="fa-brands fa-google" style="color: rgb(66, 133, 244);"></i>
+                    </button>
+
+                    <button type="button" class="social-login-btn" id="appleLoginBtn">
+                        <i class="fa-brands fa-apple" style="color: rgb(29, 29, 31);"></i>
+                    </button>
+
+                    <button type="button" class="social-login-btn" id="facebookLoginBtn">
+                        <i class="fa-brands fa-facebook-f" style="color: rgb(24, 119, 242);"></i>
+                    </button>
                 </div>
 
                 <div class="register-line">
@@ -87,6 +100,8 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.js"></script>
     <script src="JS/script.js"></script>
+
+
 </body>
 
 </html>

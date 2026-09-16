@@ -372,7 +372,18 @@ small {
     bottom: 40px;
 }
 
+.login-message {
+    margin-top: 8px;
+    font-size: 14px;
+}
 
+.login-message.error {
+    color: red;
+}
+
+.login-message.success {
+    color: green;
+}
 
 
 
