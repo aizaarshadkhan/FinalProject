@@ -124,6 +124,9 @@ $(document).ready(function () {
                     else if (food.status === "DELIVERED") {
                         statusClass = "delivered";
                     }
+                    else if (food.status === "EXPIRED") {
+                        statusClass = "expired";
+                    }
 
 
                     // ==========================================
@@ -464,7 +467,7 @@ $(document).ready(function () {
 
                 $("#modalFoodStatus")
                     .removeClass(
-                        "available claimed delivered"
+                        "available expired claimed delivered"
                     )
                     .addClass(statusClass)
                     .text(food.status || "-");

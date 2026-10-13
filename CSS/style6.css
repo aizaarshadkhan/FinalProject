@@ -226,6 +226,17 @@ body {
 }
 
 
+.expired {
+    color: #b91c1c;
+    background-color: #fee2e2;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+
 /* ADD FOOD */
 
 .add-food-card {
