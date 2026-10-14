@@ -653,6 +653,12 @@ body {
     color: #6951d4;
 }
 
+/* EXPIRED */
+.claim-status.expired {
+    background: #eee9ff;
+    color: #b91c1c;
+}
+
 
 /* =========================================================
    LOADING
